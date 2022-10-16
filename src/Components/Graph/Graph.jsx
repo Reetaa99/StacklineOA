@@ -5,8 +5,23 @@ import "chartjs-adapter-date-fns";
 import { enGB } from "date-fns/locale";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import "./Graph.css";
 ChartJS.register(...registerables);
+
+const labels = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 const options = {
   responsive: true,
@@ -26,34 +41,27 @@ const options = {
     x: {
       adapters: {
         date: { locale: enGB },
-        type: "time",
-        time: {
-          unit: "month",
+      },
+      type: "time",
+      min: "2017-01-01",
+      ticks: {
+        source: labels,
+      },
+      time: {
+        // parser: "yyyy-mm-dd",
+        unit: "month",
+        displayFormats: {
+          month: "MMM",
         },
       },
     },
   },
 };
 
-const labels = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "June",
-  "July",
-  "Aug",
-  "Sept",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-
 export default function Graph({ sales }) {
   const [data, setData] = useState({
+    labels,
     datasets: [
-      labels,
       {
         label: "Retail Sales",
         data: [],
@@ -89,7 +97,7 @@ export default function Graph({ sales }) {
   }, [sales]);
 
   return (
-    <div>
+    <div className="graphBackground">
       <Line data={data} options={options} />
     </div>
   );

@@ -1,7 +1,0 @@
-import React from 'react'
-
-export default function TopBar() {
-  return (
-    <div>Logo at top left</div>
-  )
-}

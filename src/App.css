@@ -1,8 +1,6 @@
 .App {
   text-align: center;
   background-color: #f5f8fa;
-  width: 100vw;
-  height: 100vh;
 }
 
 .App-logo {
@@ -45,4 +43,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.graphchartContainer {
+  width: 76vw;
 }

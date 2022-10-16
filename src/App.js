@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Chart from "../src/Components/Chart";
+import Chart from "./Components/Chart/Chart";
 import GeneralInfo from "./Components/GeneralInfo/GeneralInfo";
-import Graph from "../src/Components/Graph";
-import TopBar from "../src/Components/TopBar";
+import Graph from "./Components/Graph/Graph";
+import TopBar from "../src/Components/TopBar/TopBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -31,7 +30,7 @@ function App() {
           image={data.image}
           tags={data.tags}
         />
-        <div>
+        <div className="graphchartContainer">
           <Graph sales={data.sales} />
           <Chart sales={data.sales} />
         </div>

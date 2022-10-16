@@ -1,0 +1,16 @@
+.topbarBackGround {
+  background-color: #062849;
+  width: 100%;
+  box-sizing: content-box;
+  padding: 10px;
+}
+
+.logoContainer {
+  width: 5%;
+}
+
+.logo {
+  height: 30px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #fff;
+}

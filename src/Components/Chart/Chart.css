@@ -1,0 +1,14 @@
+.chartBackground {
+  background-color: #fff;
+  width: 100%;
+  margin: 10px 0;
+  border-collapse: collapse;
+}
+
+.rowStyles {
+  border: 2px solid #f5f6fa;
+}
+
+.tdStyles {
+  padding: 8px;
+}
