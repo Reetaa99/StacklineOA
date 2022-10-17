@@ -27,6 +27,14 @@ const determineTextStyles = (title, data) => {
   }
 };
 
+const titleFormatter = (title) => {
+  title = title[0].toUpperCase() + title.substring(1);
+  return title
+    .match(/[A-Z][a-z]+/g)
+    .map((item) => item.toUpperCase())
+    .join(" ");
+};
+
 export default function Chart({ sales = [] }) {
   const [tableTitles, setTableTitles] = useState([]);
   useEffect(() => {
@@ -43,7 +51,7 @@ export default function Chart({ sales = [] }) {
     <table className="chartBackground">
       <thead>
         {tableTitles.map((item) => {
-          return <th>{item}</th>;
+          return <th>{titleFormatter(item)}</th>;
         })}
       </thead>
       <tbody>
