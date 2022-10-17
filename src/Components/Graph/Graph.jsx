@@ -37,6 +37,8 @@ const options = {
   scales: {
     y: {
       title: { display: true, text: "$" },
+      min: -500000,
+      max: 1500000,
     },
     x: {
       adapters: {
@@ -48,7 +50,6 @@ const options = {
         source: labels,
       },
       time: {
-        // parser: "yyyy-mm-dd",
         unit: "month",
         displayFormats: {
           month: "MMM",
