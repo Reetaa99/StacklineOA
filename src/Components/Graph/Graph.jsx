@@ -6,6 +6,8 @@ import { enGB } from "date-fns/locale";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./Graph.css";
+import store from "../../Redux/store";
+
 ChartJS.register(...registerables);
 
 const labels = [
@@ -59,7 +61,8 @@ const options = {
   },
 };
 
-export default function Graph({ sales }) {
+export default function Graph() {
+  const { sales = [] } = store.getState();
   const [data, setData] = useState({
     labels,
     datasets: [
@@ -79,6 +82,7 @@ export default function Graph({ sales }) {
       },
     ],
   });
+
   useEffect(() => {
     if (sales) {
       const retailSales = [];

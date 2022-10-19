@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import store from "../../Redux/store";
 import "./Chart.css";
 const dollarFormatter = (money) => {
   const formatter = new Intl.NumberFormat("en-US", {
@@ -35,8 +36,9 @@ const titleFormatter = (title) => {
     .join(" ");
 };
 
-export default function Chart({ sales = [] }) {
+export default function Chart() {
   const [tableTitles, setTableTitles] = useState([]);
+  const { sales = [] } = store.getState();
   useEffect(() => {
     if (sales) {
       const titles = [];
@@ -50,17 +52,19 @@ export default function Chart({ sales = [] }) {
   return (
     <table className="chartBackground">
       <thead>
-        {tableTitles.map((item) => {
-          return <th>{titleFormatter(item)}</th>;
-        })}
+        <tr>
+          {tableTitles.map((item, itemIndex) => {
+            return <th key={`column-${itemIndex}`}>{titleFormatter(item)}</th>;
+          })}
+        </tr>
       </thead>
       <tbody>
-        {sales.map((item) => {
+        {sales.map((item, index) => {
           return (
-            <tr className="rowStyles">
-              {tableTitles.map((title) => {
+            <tr className="rowStyles" key={`row-${index}`}>
+              {tableTitles.map((title, i) => {
                 return (
-                  <td className="tdStyles">
+                  <td className="tdStyles" key={`${title}-${i}`}>
                     {determineTextStyles(title, item[title])}
                   </td>
                 );

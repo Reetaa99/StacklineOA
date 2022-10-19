@@ -3,19 +3,18 @@ import Chart from "./Components/Chart/Chart";
 import GeneralInfo from "./Components/GeneralInfo/GeneralInfo";
 import Graph from "./Components/Graph/Graph";
 import TopBar from "../src/Components/TopBar/TopBar";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
+import { updateData } from "./Redux/action";
+import store from "./Redux/store";
 
 function App() {
-  const [data, setData] = useState({});
-
   useEffect(() => {
     const getDataFromJson = async () => {
       const allData = await axios.get(
         "stackline_frontend_assessment_data_2021.json"
       );
-      console.log("all daat", allData);
-      setData(allData.data[0]);
+      store.dispatch(updateData(allData.data[0]));
     };
     getDataFromJson();
   }, []);
@@ -24,15 +23,10 @@ function App() {
     <div className="App">
       <TopBar />
       <div className="content">
-        <GeneralInfo
-          title={data.title}
-          subtitle={data.subtitle}
-          image={data.image}
-          tags={data.tags}
-        />
+        <GeneralInfo />
         <div className="graphchartContainer">
-          <Graph sales={data.sales} />
-          <Chart sales={data.sales} />
+          <Graph />
+          <Chart />
         </div>
       </div>
     </div>
