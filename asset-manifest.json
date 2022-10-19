@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/StacklineOAweb/static/css/main.b42daaef.css",
-    "main.js": "/StacklineOAweb/static/js/main.c77134ac.js",
-    "static/js/787.868bbffa.chunk.js": "/StacklineOAweb/static/js/787.868bbffa.chunk.js",
-    "static/media/stackline_logo.svg": "/StacklineOAweb/static/media/stackline_logo.22c6867fb18c9ea6fbcdad5a6ffcdfd1.svg",
-    "index.html": "/StacklineOAweb/index.html",
-    "main.b42daaef.css.map": "/StacklineOAweb/static/css/main.b42daaef.css.map",
-    "main.c77134ac.js.map": "/StacklineOAweb/static/js/main.c77134ac.js.map",
-    "787.868bbffa.chunk.js.map": "/StacklineOAweb/static/js/787.868bbffa.chunk.js.map"
+    "main.css": "/StacklineOA/static/css/main.b42daaef.css",
+    "main.js": "/StacklineOA/static/js/main.fbffd9ad.js",
+    "static/js/787.868bbffa.chunk.js": "/StacklineOA/static/js/787.868bbffa.chunk.js",
+    "static/media/stackline_logo.svg": "/StacklineOA/static/media/stackline_logo.22c6867fb18c9ea6fbcdad5a6ffcdfd1.svg",
+    "index.html": "/StacklineOA/index.html",
+    "main.b42daaef.css.map": "/StacklineOA/static/css/main.b42daaef.css.map",
+    "main.fbffd9ad.js.map": "/StacklineOA/static/js/main.fbffd9ad.js.map",
+    "787.868bbffa.chunk.js.map": "/StacklineOA/static/js/787.868bbffa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b42daaef.css",
-    "static/js/main.c77134ac.js"
+    "static/js/main.fbffd9ad.js"
   ]
 }
